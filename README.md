@@ -17,8 +17,8 @@
 ## 기능목록
 
 ### 컴퓨터는 1에서 9까지 서로 다른 수로 이루어진 3자리 숫자 자동생성한다.
-- [ ] Random 값 추출은 camp.nextstep.edu.missionutils.Randoms의 pickNumberInRange()를 활용한다.
-- [ ] 3자리는 서로 다른 수 이기때문에 중복을 확인한다.
+- [x] Random 값 추출은 camp.nextstep.edu.missionutils.Randoms의 pickNumberInRange()를 활용한다.
+- [x] 3자리는 서로 다른 수 이기때문에 중복을 확인한다.
 
 ### 플레이어에게 3자리 수를 입력 받는다. 
 - [ ] 입력안내 메시지 출력
