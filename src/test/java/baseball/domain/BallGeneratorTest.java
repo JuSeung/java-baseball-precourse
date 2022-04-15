@@ -16,7 +16,7 @@ class BallGeneratorTest {
         BallGenerator ballGenerator = new BallGenerator();
 
         // when
-        int size = ballGenerator.getBallNumbers().size();
+        int size = ballGenerator.createNonDuplicateNumbers().size();
 
         // then
         assertThat(size).isEqualTo(3);
@@ -29,8 +29,8 @@ class BallGeneratorTest {
         // given
         BallGenerator ballGenerator = new BallGenerator();
 
-        // given
-        Set<Integer> nonduplicateNumbers = new HashSet<>(ballGenerator.getBallNumbers());
+        // when
+        Set<Integer> nonduplicateNumbers = new HashSet<>(ballGenerator.createNonDuplicateNumbers());
         int size = nonduplicateNumbers.size();
 
         // then

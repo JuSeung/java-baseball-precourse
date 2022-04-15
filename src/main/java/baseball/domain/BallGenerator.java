@@ -11,36 +11,28 @@ import java.util.List;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class BallGenerator {
-    private final List<Integer> ballNumbers;
 
-    public BallGenerator() {
-        this.ballNumbers = new ArrayList<>();
-        createNonDuplicateNumbers();
-    }
-
-    public List<Integer> getBallNumbers() {
-        return this.ballNumbers;
-    }
-
-    private void createNonDuplicateNumbers() {
-        while (!isListSizeEqualLimit()) {
+    public List<Integer> createNonDuplicateNumbers() {
+        List<Integer> radomNumberList = new ArrayList<>();
+        while (!isListSizeEqualLimit(radomNumberList.size())) {
             int randomNumber = Randoms.pickNumberInRange(START_NUMBER.getNumber(), END_NUMBER.getNumber());
-            addNumber(randomNumber);
+            addNumber(radomNumberList, randomNumber);
+        }
+        return radomNumberList;
+    }
+
+    private boolean isListSizeEqualLimit(int size) {
+        return size == SIZE_LIMIT_NUMBER.getNumber();
+    }
+
+    private void addNumber(List<Integer>radomNumberList, int number) {
+        if (!isDuplicationNumber(radomNumberList, number)) {
+            radomNumberList.add(number);
         }
     }
 
-    private boolean isListSizeEqualLimit() {
-        return this.ballNumbers.size() == SIZE_LIMIT_NUMBER.getNumber();
-    }
-
-    private void addNumber(int number) {
-        if (!isDuplicationNumber(number)) {
-            this.ballNumbers.add(number);
-        }
-    }
-
-    private boolean isDuplicationNumber(int number) {
-        return this.ballNumbers.contains(number);
+    private boolean isDuplicationNumber(List<Integer>radomNumberList, int number) {
+        return radomNumberList.contains(number);
     }
 
 }
