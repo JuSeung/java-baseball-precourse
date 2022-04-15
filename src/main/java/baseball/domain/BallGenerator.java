@@ -25,13 +25,13 @@ public class BallGenerator {
         return size == SIZE_LIMIT_NUMBER.getNumber();
     }
 
-    private void addNumber(List<Integer>radomNumberList, int number) {
+    private void addNumber(List<Integer> radomNumberList, int number) {
         if (!isDuplicationNumber(radomNumberList, number)) {
             radomNumberList.add(number);
         }
     }
 
-    private boolean isDuplicationNumber(List<Integer>radomNumberList, int number) {
+    private boolean isDuplicationNumber(List<Integer> radomNumberList, int number) {
         return radomNumberList.contains(number);
     }
 

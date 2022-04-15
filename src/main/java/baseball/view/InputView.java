@@ -1,8 +1,6 @@
 package baseball.view;
 
 
-
-
 import static baseball.env.RestrictionsNumber.END_NUMBER;
 import static baseball.env.RestrictionsNumber.SIZE_LIMIT_NUMBER;
 import static baseball.env.RestrictionsNumber.START_NUMBER;
