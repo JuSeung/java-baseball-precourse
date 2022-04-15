@@ -173,5 +173,20 @@ class InputViewTest {
 
     }
 
+    @DisplayName("입력한 숫자가 1 또는 2가 아니면I llegalArgumentException을 던진다.")
+    @ParameterizedTest
+    @ValueSource(strings = {"3", "4"})
+    void command_exception(String inputNumbers) {
+        // given
+        InputView inputView = new InputView();
+
+        // when & then
+        assertThatThrownBy(() -> {
+            inputView.isRestart(inputNumbers);
+        }).isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("명령어는 1(시작)과 2(종료)만 가능합니다.");
+
+    }
+
 
 }
