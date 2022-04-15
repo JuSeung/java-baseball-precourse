@@ -16,11 +16,14 @@ public class InputView {
     private static final String WRONG_NUMBER_SIZE = "3자리만 입력 가능 합니다.";
     private static final String WRONG_NUMBER_TYPE = "숫자만 입력 가능 합니다.";
     private static final String WRONG_NUMBER_RANGE = "각 자릿수는 1에서 9까지 입니다.";
-    private static final String WRONG_NUMBER_DUPLICATION = "각 자릿수는 1에서 9까지 입니다.";
+    private static final String WRONG_NUMBER_DUPLICATION = "중복된 숫자는 허용하지 않습니다.";
 
-    public List<Integer> askInputNumbers() {
+    public String askInputNumbers() {
         System.out.println(INPUT_MESSAGE);
-        String inputNumbers = Console.readLine();
+        return Console.readLine();
+    }
+
+    public List<Integer> getInputNumberList(String inputNumbers) {
         validationNumberLength(inputNumbers);
         validationNumberType(inputNumbers);
         return generatorNumbersToList(inputNumbers);
@@ -29,7 +32,7 @@ public class InputView {
     private List<Integer> generatorNumbersToList(String inputNumbers) {
         List<Integer> numberList = new ArrayList<>();
         for (char number : inputNumbers.toCharArray()) {
-            int addNumber = number;
+            int addNumber = Character.getNumericValue(number);
             validationNumberRange(addNumber);
             validationNumberDuplication(numberList, addNumber);
             numberList.add(addNumber);
@@ -44,7 +47,7 @@ public class InputView {
     }
 
     private void validationNumberType(String inputNumbers) {
-        String regex = "[1-9]+";
+        String regex = "[0-9]+";
         if (!inputNumbers.matches(regex)) {
             throw new IllegalArgumentException(WRONG_NUMBER_TYPE);
         }
