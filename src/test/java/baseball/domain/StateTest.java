@@ -13,7 +13,8 @@ class StateTest {
     @ParameterizedTest
     @CsvSource(value = {"0:0"}, delimiter = ':')
     void getMessage_case_nothing(int ballCount, int strikeCount) {
-        State state = new State(ballCount, strikeCount);
+        State state = new State();
+        state.setBallAndStrike(ballCount, strikeCount);
         assertThat(state.getMessage()).isEqualTo("낫싱");
     }
 
@@ -21,7 +22,8 @@ class StateTest {
     @ParameterizedTest
     @CsvSource(value = {"0:0"}, delimiter = ':')
     void getMessage_case_three_ball(int ballCount, int strikeCount) {
-        State state = new State(ballCount, strikeCount);
+        State state = new State();
+        state.setBallAndStrike(ballCount, strikeCount);
         assertThat(state.getMessage()).isEqualTo("3볼");
     }
 
@@ -29,7 +31,8 @@ class StateTest {
     @ParameterizedTest
     @CsvSource(value = {"2:0"}, delimiter = ':')
     void getMessage_case_two_ball(int ballCount, int strikeCount) {
-        State state = new State(ballCount, strikeCount);
+        State state = new State();
+        state.setBallAndStrike(ballCount, strikeCount);
         assertThat(state.getMessage()).isEqualTo("2볼");
     }
 
@@ -37,7 +40,8 @@ class StateTest {
     @ParameterizedTest
     @CsvSource(value = {"1:0"}, delimiter = ':')
     void getMessage_case_one_ball(int ballCount, int strikeCount) {
-        State state = new State(ballCount, strikeCount);
+        State state = new State();
+        state.setBallAndStrike(ballCount, strikeCount);
         assertThat(state.getMessage()).isEqualTo("1볼");
     }
 
@@ -45,7 +49,8 @@ class StateTest {
     @ParameterizedTest
     @CsvSource(value = {"0:3"}, delimiter = ':')
     void getMessage_case_strike(int ballCount, int strikeCount) {
-        State state = new State(ballCount, strikeCount);
+        State state = new State();
+        state.setBallAndStrike(ballCount, strikeCount);
         assertThat(state.getMessage()).isEqualTo("3스트라이크");
     }
 
@@ -53,7 +58,8 @@ class StateTest {
     @ParameterizedTest
     @CsvSource(value = {"0:2"}, delimiter = ':')
     void getMessage_case_two(int ballCount, int strikeCount) {
-        State state = new State(ballCount, strikeCount);
+        State state = new State();
+        state.setBallAndStrike(ballCount, strikeCount);
         assertThat(state.getMessage()).isEqualTo("2스트라이크");
     }
 
@@ -61,7 +67,8 @@ class StateTest {
     @ParameterizedTest
     @CsvSource(value = {"0:1"}, delimiter = ':')
     void getMessage_case_one(int ballCount, int strikeCount) {
-        State state = new State(ballCount, strikeCount);
+        State state = new State();
+        state.setBallAndStrike(ballCount, strikeCount);
         assertThat(state.getMessage()).isEqualTo("1스트라이크");
     }
 
@@ -69,7 +76,8 @@ class StateTest {
     @ParameterizedTest
     @CsvSource(value = {"0:3"}, delimiter = ':')
     void getMessage_case_success(int ballCount, int strikeCount) {
-        State state = new State(ballCount, strikeCount);
+        State state = new State();
+        state.setBallAndStrike(ballCount, strikeCount);
         assertTrue(state.isSuccess());
     }
 }

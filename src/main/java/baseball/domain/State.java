@@ -8,10 +8,13 @@ public class State {
     private static final int ZERO_COUNT = 0;
     private static final int SUCCESS_STRIKE_COUNT = 3;
 
-    private final int ballCount;
-    private final int strikeCount;
+    private int ballCount;
+    private int strikeCount;
 
-    public State(int ballCount, int strikeCount) {
+    public State() {
+    }
+
+    public void setBallAndStrike(int ballCount, int strikeCount) {
         this.ballCount = ballCount;
         this.strikeCount = strikeCount;
     }
