@@ -20,7 +20,7 @@ class StateTest {
 
     @DisplayName("3볼")
     @ParameterizedTest
-    @CsvSource(value = {"0:0"}, delimiter = ':')
+    @CsvSource(value = {"3:0"}, delimiter = ':')
     void getMessage_case_three_ball(int ballCount, int strikeCount) {
         State state = new State();
         state.setBallAndStrike(ballCount, strikeCount);
