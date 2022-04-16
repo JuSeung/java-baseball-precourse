@@ -8,8 +8,9 @@ import java.util.List;
 public class Referee {
     private int ballCount = 0;
     private int strikeCount = 0;
+    private boolean playBall = true;
 
-    public Referee(List<Integer> ballGeneratorList, List<Integer> inputNumberList) {
+    public void judgment(List<Integer> ballGeneratorList, List<Integer> inputNumberList) {
         initCount();
         calculationBall(ballGeneratorList, inputNumberList);
         calculationStrike(ballGeneratorList, inputNumberList);
@@ -21,6 +22,14 @@ public class Referee {
 
     public int getStrikeCount() {
         return this.strikeCount;
+    }
+
+    public boolean isPlayBall() {
+        return this.playBall;
+    }
+
+    public void setPlayBall(boolean condition) {
+        this.playBall = condition;
     }
 
     private void initCount() {
